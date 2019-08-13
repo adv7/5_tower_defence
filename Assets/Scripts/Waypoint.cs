@@ -13,14 +13,6 @@ public class Waypoint : MonoBehaviour
 
     const int gridSize = 10;
 
-    //void Update()
-    //{
-    //    if (isExplored)
-    //    {
-    //        SetTopColor(exploredColor); // todo move later
-    //    }
-    //}
-
     public int GetGridSize()
     {
         return gridSize;
