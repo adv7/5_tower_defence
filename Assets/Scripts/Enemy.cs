@@ -5,25 +5,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] Collider colissionMesh;
+
     [SerializeField] GameObject deathFX;
-    [SerializeField] int hits = 20;
+    [SerializeField] GameObject shotedFX;
+    [SerializeField] int hitPoints = 20;
 
     // Start is called before the first frame update
     void Start()
     {
-        AddBoxCollider();
-    }
-
-    private void AddBoxCollider()
-    {
-        Collider enemyBoxCollider = gameObject.AddComponent<BoxCollider>();
-        enemyBoxCollider.isTrigger = false;
+        
     }
 
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        if(hits <= 1)
+        if(hitPoints <= 1)
         {
             KillEnemy();
         }
@@ -31,13 +28,13 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
-        hits--;
+        GameObject sfx = Instantiate(shotedFX, transform.position, Quaternion.identity);
+        hitPoints--;
     }
 
     private void KillEnemy()
     {
-        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        print("enemy killed");
+        GameObject dfx = Instantiate(deathFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
