@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        if(hitPoints <= 1)
+        if(hitPoints < 1)
         {
             KillEnemy();
         }

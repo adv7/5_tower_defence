@@ -23,11 +23,19 @@ public class PathFinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        if(path.Count == 0)
+        {
+            CalculatePath();
+        }
+        return path;
+    }
+
+    private void CalculatePath()
+    {
         LoadBlocks();
         ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
-        return path;
     }
 
     private void CreatePath()
@@ -107,7 +115,7 @@ public class PathFinder : MonoBehaviour
             var gridPos = waypoint.GetGridPos();
             if(grid.ContainsKey(gridPos))
             {
-                Debug.LogWarning("Skipping overlapping block" + waypoint);
+                Debug.LogWarning("Skipping overlapping block: " + waypoint);
             }
             else
             {
