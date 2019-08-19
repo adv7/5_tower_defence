@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] GameObject deathFX;
     [SerializeField] GameObject shotedFX;
-    [SerializeField] int hitPoints = 20;
+    [SerializeField] int hitPoints = 10;
 
     // Start is called before the first frame update
     void Start()
