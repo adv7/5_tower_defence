@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] Collider colissionMesh;
 
-    [SerializeField] GameObject deathFX;
-    [SerializeField] GameObject shotedFX;
+    [SerializeField] ParticleSystem deathFX;
+    [SerializeField] ParticleSystem shotedFX;
     [SerializeField] int hitPoints = 10;
 
     // Start is called before the first frame update
@@ -28,13 +28,13 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
-        GameObject sfx = Instantiate(shotedFX, transform.position, Quaternion.identity);
+        shotedFX.Play();
         hitPoints--;
     }
 
     private void KillEnemy()
     {
-        GameObject dfx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        deathFX.Play();
         Destroy(gameObject);
     }
 }
