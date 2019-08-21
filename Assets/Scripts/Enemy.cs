@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] ParticleSystem deathFX;
     [SerializeField] ParticleSystem shotedFX;
-    [SerializeField] int hitPoints = 10;
+    [SerializeField] int hitPoints = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,8 @@ public class Enemy : MonoBehaviour
 
     private void KillEnemy()
     {
-        deathFX.Play();
+        var dfx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        dfx.Play();
         Destroy(gameObject);
     }
 }
