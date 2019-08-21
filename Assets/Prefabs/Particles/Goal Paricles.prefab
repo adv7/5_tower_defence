@@ -4708,7 +4708,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
+  - {fileID: 2100000, guid: 19814f35f21b5834ab03c4b11e23d923, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9461,7 +9461,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19814f35f21b5834ab03c4b11e23d923, type: 2}
+  - {fileID: 2100000, guid: 3a814b4e0cb3c4b7ba0d0fb88c3d3c93, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9518,7 +9518,7 @@ GameObject:
   - component: {fileID: 198579650134916736}
   - component: {fileID: 199901880920316678}
   m_Layer: 0
-  m_Name: White Spray
+  m_Name: Red Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14214,7 +14214,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3555662f05cb52f4ea4679ed3cba2d66, type: 2}
+  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14271,7 +14271,7 @@ GameObject:
   - component: {fileID: 198614261362037272}
   - component: {fileID: 199143583539381130}
   m_Layer: 0
-  m_Name: Blue Chunks
+  m_Name: Orange Chunks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18967,7 +18967,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a814b4e0cb3c4b7ba0d0fb88c3d3c93, type: 2}
+  - {fileID: 2100000, guid: a4cfe67d7dac4b841815c328cfaa6da3, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -19024,7 +19024,7 @@ GameObject:
   - component: {fileID: 198537984209914932}
   - component: {fileID: 199362987947312204}
   m_Layer: 0
-  m_Name: Enemy Death Particles
+  m_Name: Goal Paricles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19037,7 +19037,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929956291960174}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 9.309999, z: 0}
   m_LocalScale: {x: 1.0000005, y: 0.99999994, z: 1.0000005}
   m_Children:
