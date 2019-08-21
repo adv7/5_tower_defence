@@ -4,33 +4,47 @@ using UnityEngine;
 
 public class TowerFactory : MonoBehaviour
 {
-    [SerializeField] int towerLimit = 5;
+    [SerializeField] int towerLimit = 3;
     [SerializeField] Tower towerPrefab;
+    [SerializeField] Transform towerParentTransform;
 
-    int numTowers = 0;
+    Queue<Tower> towers = new Queue<Tower>();
 
     public void AddTower(Waypoint baseWaypoint)
     {
-        if(numTowers < towerLimit)
+        if(towers.Count < towerLimit)
         {
             InstantiateNewTower(baseWaypoint);
         }
         else
         {
-            MoveExistingTower();
+            MoveExistingTower(baseWaypoint);
         }
     }
 
-    private static void MoveExistingTower()
+    private void MoveExistingTower(Waypoint newBaseWaypoint)
     {
-        Debug.Log("to many towers on scene");
-        // todo actually move
+        var oldTower = towers.Dequeue();
+
+        oldTower.baseWaypoint.isPlaceable = true; // free-up the block
+        newBaseWaypoint.isPlaceable = false;
+
+        oldTower.baseWaypoint = newBaseWaypoint;
+
+        oldTower.transform.position = newBaseWaypoint.transform.position;
+
+        towers.Enqueue(oldTower);
     }
 
     private void InstantiateNewTower(Waypoint baseWaypoint)
     {
-        numTowers++;
-        Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity);
+        var newTower = Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity);
+        newTower.transform.parent = towerParentTransform;
         baseWaypoint.isPlaceable = false;
+
+        newTower.baseWaypoint = baseWaypoint;
+        baseWaypoint.isPlaceable = false;
+
+        towers.Enqueue(newTower);
     }
 }

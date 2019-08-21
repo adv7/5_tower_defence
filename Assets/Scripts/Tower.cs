@@ -10,8 +10,10 @@ public class Tower : MonoBehaviour
     [SerializeField] float attackRange = 10f;
     [SerializeField] ParticleSystem projectileParticle;
 
+    public Waypoint baseWaypoint; // what the towers is standing on
+
     // state of each tower
-    [SerializeField] Transform targetEnemy;
+    Transform targetEnemy;
 
     // Update is called once per frame
     void Update()
